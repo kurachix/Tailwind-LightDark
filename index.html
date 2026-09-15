@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minimal Store</title>
 
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Configuração do Tailwind para modo escuro via classe CSS -->
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -26,7 +24,6 @@
         }
     </script>
 
-    <!-- Estilos adicionais simples para suavizar transições de cores -->
     <style>
         * {
             transition: background-color 0.2s ease, border-color 0.2s ease;
@@ -36,14 +33,9 @@
 
 <body class="bg-zinc-100 dark:bg-[#0c0c0e] text-zinc-800 dark:text-zinc-100 min-h-screen flex flex-col justify-between py-6 px-4 sm:px-6 lg:px-8 font-sans antialiased">
 
-    <!-- Container Principal Centralizado -->
     <div class="max-w-5xl w-full mx-auto bg-white dark:bg-[#141416] border border-zinc-200 dark:border-zinc-800 rounded-3xl shadow-xl overflow-hidden my-auto">
         
-        <!-- ================================================================= -->
-        <!-- 1. CABEÇALHO COM LOGO E BOTÃO DE TEMA (LIGHT / DARK) -->
-        <!-- ================================================================= -->
         <header class="flex items-center justify-between px-6 sm:px-8 py-5 border-b border-zinc-100 dark:border-zinc-800/80">
-            <!-- Logo da Loja -->
             <div class="flex items-center gap-2.5">
                 <div class="w-8 h-8 rounded-lg bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-bold flex items-center justify-center text-sm shadow-sm">
                     M
@@ -51,32 +43,21 @@
                 <span class="font-bold text-lg tracking-tight text-zinc-900 dark:text-white">Minimal Store</span>
             </div>
 
-            <!-- Botão de Alternância de Tema -->
             <button id="theme-toggle" type="button" class="flex items-center gap-2 px-3.5 py-1.5 text-xs font-medium rounded-full border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800/60 text-zinc-700 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition cursor-pointer">
-                <!-- Ícone da Lua (mostrado no modo claro) -->
                 <svg id="theme-toggle-dark-icon" class="w-3.5 h-3.5 hidden" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
                 </svg>
-                <!-- Ícone do Sol (mostrado no modo escuro) -->
                 <svg id="theme-toggle-light-icon" class="w-3.5 h-3.5 hidden" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
                 </svg>
-                <!-- Texto do Botão -->
                 <span id="theme-toggle-text">Dark mode</span>
             </button>
         </header>
 
-        <!-- ================================================================= -->
-        <!-- 2. CONTEÚDO PRINCIPAL: FORMULÁRIO (ESQUERDA) + RESUMO (DIREITA) -->
-        <!-- ================================================================= -->
         <main class="grid grid-cols-1 lg:grid-cols-12 gap-8 p-6 sm:p-8">
             
-            <!-- ------------------------------------------------------------- -->
-            <!-- COLUNA DA ESQUERDA: ETAPAS DO CHECKOUT (7 colunas) -->
-            <!-- ------------------------------------------------------------- -->
             <div class="lg:col-span-7 space-y-7">
                 
-                <!-- ETAPA 1: DADOS PESSOAIS -->
                 <section class="space-y-4">
                     <div class="flex items-center gap-2.5">
                         <span class="w-5 h-5 rounded-full border border-zinc-300 dark:border-zinc-700 flex items-center justify-center text-xs font-semibold text-zinc-600 dark:text-zinc-400">1</span>
@@ -84,7 +65,6 @@
                     </div>
 
                     <div class="space-y-3 pl-7">
-                        <!-- Campo: E-mail -->
                         <div>
                             <label class="block text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-1">E-mail para confirmação</label>
                             <div class="relative">
@@ -97,7 +77,6 @@
                             </div>
                         </div>
 
-                        <!-- Grid: Nome Completo e CPF -->
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <div>
                                 <label class="block text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-1">Nome Completo</label>
@@ -109,7 +88,6 @@
                             </div>
                         </div>
 
-                        <!-- Campo: Telefone / WhatsApp -->
                         <div>
                             <label class="block text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-1">Telefone / WhatsApp</label>
                             <input type="text" value="(11) 98765-4321" class="w-full px-3.5 py-2.5 text-xs bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-lg text-zinc-800 dark:text-zinc-200 focus:outline-none focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-600">
@@ -117,7 +95,6 @@
                     </div>
                 </section>
 
-                <!-- ETAPA 2: ENDEREÇO DE ENTREGA -->
                 <section class="space-y-4">
                     <div class="flex items-center gap-2.5">
                         <span class="w-5 h-5 rounded-full border border-zinc-300 dark:border-zinc-700 flex items-center justify-center text-xs font-semibold text-zinc-600 dark:text-zinc-400">2</span>
@@ -125,7 +102,6 @@
                     </div>
 
                     <div class="space-y-3 pl-7">
-                        <!-- Grid: CEP e Cidade / UF -->
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <div>
                                 <label class="block text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-1">CEP</label>
@@ -137,7 +113,6 @@
                             </div>
                         </div>
 
-                        <!-- Grid: Logradouro e Número -->
                         <div class="grid grid-cols-3 gap-3">
                             <div class="col-span-2">
                                 <label class="block text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-1">Logradouro / Avenida</label>
@@ -151,7 +126,6 @@
                     </div>
                 </section>
 
-                <!-- ETAPA 3: FORMA DE PAGAMENTO -->
                 <section class="space-y-4">
                     <div class="flex items-center gap-2.5">
                         <span class="w-5 h-5 rounded-full border border-zinc-300 dark:border-zinc-700 flex items-center justify-center text-xs font-semibold text-zinc-600 dark:text-zinc-400">3</span>
@@ -159,9 +133,7 @@
                     </div>
 
                     <div class="pl-7 space-y-4">
-                        <!-- Abas de Pagamento: Cartão / PIX / Boleto -->
                         <div class="grid grid-cols-3 gap-2.5">
-                            <!-- Aba Cartão -->
                             <button type="button" id="tab-card" onclick="selecionarPagamento('card')" class="payment-tab relative flex flex-col sm:flex-row items-center justify-center gap-2 py-3 px-2 border-2 rounded-xl text-xs font-medium transition cursor-pointer border-zinc-900 dark:border-zinc-100 bg-zinc-50 dark:bg-zinc-800/80 text-zinc-900 dark:text-white">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <rect x="2" y="5" width="20" height="14" rx="2" stroke-width="2"></rect>
@@ -170,9 +142,7 @@
                                 <span>Cartão</span>
                             </button>
 
-                            <!-- Aba PIX -->
                             <button type="button" id="tab-pix" onclick="selecionarPagamento('pix')" class="payment-tab relative flex flex-col sm:flex-row items-center justify-center gap-1.5 py-3 px-2 border rounded-xl text-xs font-medium transition cursor-pointer border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800/40">
-                                <!-- Badge de Desconto PIX -->
                                 <span class="absolute -top-2 px-1.5 py-0.2 bg-emerald-500 text-white text-[9px] font-bold rounded-full shadow-sm">
                                     -5% OFF
                                 </span>
@@ -182,7 +152,6 @@
                                 <span>PIX</span>
                             </button>
 
-                            <!-- Aba Boleto -->
                             <button type="button" id="tab-boleto" onclick="selecionarPagamento('boleto')" class="payment-tab relative flex flex-col sm:flex-row items-center justify-center gap-2 py-3 px-2 border rounded-xl text-xs font-medium transition cursor-pointer border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800/40">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h1v12H4zm4 0h2v12H8zm5 0h1v12h-1zm4 0h3v12h-3z"></path>
@@ -191,16 +160,11 @@
                             </button>
                         </div>
 
-                        <!-- -------------------------------------------------- -->
-                        <!-- Conteúdo da Forma de Pagamento 1: CARTÃO -->
-                        <!-- -------------------------------------------------- -->
                         <div id="payment-card-content" class="space-y-3">
-                            <!-- Número do Cartão -->
                             <div>
                                 <label class="block text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-1">Número do Cartão</label>
                                 <div class="relative">
                                     <input type="text" value="4532 •••• •••• 8819" class="w-full px-3.5 py-2.5 text-xs bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-lg text-zinc-800 dark:text-zinc-200 focus:outline-none focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-600">
-                                    <!-- Ícone de Bandeira do Cartão (Mastercard estilizado) -->
                                     <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                                         <div class="flex -space-x-1.5">
                                             <div class="w-3.5 h-3.5 rounded-full bg-red-500 opacity-90"></div>
@@ -210,13 +174,11 @@
                                 </div>
                             </div>
 
-                            <!-- Nome no Cartão -->
                             <div>
                                 <label class="block text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-1">Nome no Cartão</label>
                                 <input type="text" value="LUCAS SILVA" class="w-full px-3.5 py-2.5 text-xs bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-lg text-zinc-800 dark:text-zinc-200 uppercase focus:outline-none focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-600">
                             </div>
 
-                            <!-- Grid: Validade e CVV -->
                             <div class="grid grid-cols-2 gap-3">
                                 <div>
                                     <label class="block text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-1">Validade</label>
@@ -228,7 +190,6 @@
                                 </div>
                             </div>
 
-                            <!-- Parcelamento -->
                             <div>
                                 <label class="block text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-1">Parcelamento</label>
                                 <select class="w-full px-3.5 py-2.5 text-xs bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-lg text-zinc-800 dark:text-zinc-200 focus:outline-none focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-600 cursor-pointer">
@@ -241,18 +202,12 @@
                             </div>
                         </div>
 
-                        <!-- -------------------------------------------------- -->
-                        <!-- Conteúdo da Forma de Pagamento 2: PIX -->
-                        <!-- -------------------------------------------------- -->
                         <div id="payment-pix-content" class="hidden space-y-4 text-center py-2">
                             <div class="inline-block p-3.5 bg-white border border-zinc-200 dark:border-zinc-700 rounded-2xl shadow-sm">
-                                <!-- QR Code em SVG Vetorial Nítido -->
                                 <svg class="w-36 h-36 mx-auto text-zinc-900" viewBox="0 0 100 100" fill="currentColor">
-                                    <!-- Cantos do QR Code -->
                                     <path d="M10 10h24v24H10zm4 4v16h16V14zm4 4h8v8h-8z"/>
                                     <path d="M66 10h24v24H66zm4 4v16h16V14zm4 4h8v8h-8z"/>
                                     <path d="M10 66h24v24H10zm4 4v16h16V14zm4 4h8v8h-8z"/>
-                                    <!-- Padrões internos simétricos de dados -->
                                     <rect x="42" y="10" width="4" height="12"/>
                                     <rect x="52" y="10" width="6" height="4"/>
                                     <rect x="42" y="26" width="16" height="4"/>
@@ -275,7 +230,6 @@
                                 Escaneie o QR Code no app do seu banco ou copie a chave abaixo para aprovação instantânea.
                             </p>
 
-                            <!-- Campo Copia e Cola -->
                             <div class="flex items-center gap-2 max-w-md mx-auto">
                                 <input id="pix-key" type="text" readonly value="00020126580014br.gov.bcb.pix0136a629532e-76c2-42c2-84bf-348270176864" class="w-full px-3 py-2 text-[11px] font-mono bg-zinc-50 dark:bg-zinc-900/70 border border-zinc-200 dark:border-zinc-800 rounded-lg text-zinc-600 dark:text-zinc-400 truncate">
                                 <button type="button" onclick="copiarPix()" id="btn-copy-pix" class="px-3.5 py-2 text-xs font-semibold bg-zinc-900 dark:bg-zinc-100 hover:bg-zinc-800 dark:hover:bg-white text-white dark:text-zinc-900 rounded-lg flex items-center gap-1.5 transition whitespace-nowrap shadow-sm cursor-pointer">
@@ -287,9 +241,6 @@
                             </div>
                         </div>
 
-                        <!-- -------------------------------------------------- -->
-                        <!-- Conteúdo da Forma de Pagamento 3: BOLETO -->
-                        <!-- -------------------------------------------------- -->
                         <div id="payment-boleto-content" class="hidden space-y-3 py-3">
                             <div class="p-4 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-xl text-center space-y-2">
                                 <svg class="w-10 h-10 mx-auto text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -307,28 +258,20 @@
                 </section>
             </div>
 
-            <!-- ------------------------------------------------------------- -->
-            <!-- COLUNA DA DIREITA: RESUMO DA COMPRA (5 colunas) -->
-            <!-- ------------------------------------------------------------- -->
             <div class="lg:col-span-5">
                 <div class="bg-zinc-50/80 dark:bg-zinc-900/40 border border-zinc-200/80 dark:border-zinc-800/80 rounded-2xl p-5 sm:p-6 space-y-5">
                     
-                    <!-- Cabeçalho do Card de Resumo -->
                     <div class="flex items-center justify-between">
                         <h2 class="font-bold text-sm text-zinc-900 dark:text-zinc-100">Resumo da Compra</h2>
                         <span class="text-xs text-zinc-500 dark:text-zinc-400">1 item</span>
                     </div>
 
-                    <!-- Produto -->
                     <div class="flex items-center gap-3.5">
-                        <!-- Imagem/Ícone do Produto -->
                         <div class="w-12 h-12 rounded-xl bg-zinc-200/70 dark:bg-zinc-800 flex items-center justify-center text-zinc-600 dark:text-zinc-300 flex-shrink-0">
-                            <!-- Ícone de Headphone -->
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
                             </svg>
                         </div>
-                        <!-- Detalhes do Produto -->
                         <div class="flex-1 min-w-0">
                             <h3 class="text-xs font-semibold text-zinc-900 dark:text-zinc-100 truncate">Headphone Wireless ANC</h3>
                             <p class="text-[11px] text-zinc-500 dark:text-zinc-400 truncate">Edição Midnight • Matte Black</p>
@@ -336,7 +279,6 @@
                         </div>
                     </div>
 
-                    <!-- Campo de Cupom de Desconto -->
                     <div class="flex gap-2">
                         <input id="coupon-input" type="text" placeholder="CÓDIGO DE CUPOM" value="PRIMEIRA10" class="w-full px-3.5 py-2 text-xs uppercase bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg text-zinc-800 dark:text-zinc-200 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-600">
                         <button type="button" onclick="aplicarCupom()" class="px-4 py-2 text-xs font-semibold bg-zinc-200 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 text-zinc-800 dark:text-zinc-200 rounded-lg transition cursor-pointer">
@@ -344,7 +286,6 @@
                         </button>
                     </div>
 
-                    <!-- Tabela de Valores / Subtotal / Descontos -->
                     <div class="space-y-2 text-xs border-t border-zinc-200 dark:border-zinc-800/80 pt-4">
                         <div class="flex justify-between text-zinc-600 dark:text-zinc-400">
                             <span>Subtotal</span>
@@ -360,7 +301,6 @@
                         </div>
                     </div>
 
-                    <!-- Linha do Valor Total -->
                     <div class="border-t border-zinc-200 dark:border-zinc-800/80 pt-4">
                         <div class="flex items-baseline justify-between">
                             <span class="text-xs font-bold text-zinc-900 dark:text-zinc-100">Total</span>
@@ -371,7 +311,6 @@
                         </div>
                     </div>
 
-                    <!-- Botão de Ação: Finalizar Pedido -->
                     <button type="button" id="btn-submit" class="w-full py-3 px-4 bg-zinc-900 dark:bg-zinc-100 hover:bg-zinc-800 dark:hover:bg-white text-white dark:text-zinc-900 font-semibold text-xs rounded-xl flex items-center justify-center gap-2 shadow-sm transition active:scale-[0.99] cursor-pointer">
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
@@ -379,7 +318,6 @@
                         <span id="btn-submit-text">Finalizar Pedido • R$ 260,10</span>
                     </button>
 
-                    <!-- Selos de Confiança e Garantia -->
                     <div class="space-y-1.5 pt-1 text-[11px] text-zinc-500 dark:text-zinc-400">
                         <div class="flex items-center gap-2">
                             <svg class="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -400,16 +338,12 @@
 
         </main>
 
-        <!-- ================================================================= -->
-        <!-- 3. RODAPÉ -->
-        <!-- ================================================================= -->
         <footer class="text-center py-4 px-6 border-t border-zinc-100 dark:border-zinc-800/80 text-[11px] text-zinc-400 dark:text-zinc-600">
             © 2026 Minimal Store Tecnologia Ltda. CNPJ 00.000.000/0001-00 • Todos os direitos reservados.
         </footer>
 
     </div>
 
-    <!-- Script JavaScript com a lógica de alternância de tema e abas -->
     <script src="script.js"></script>
 </body>
 </html>
